@@ -1,8 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:reddit_clone/features/auth/screens/login_screens.dart';
+import 'package:reddit_clone/router.dart';
 import 'package:reddit_clone/themes/pallete.dart';
+import 'package:routemaster/routemaster.dart';
 
 import 'firebase_options.dart';
 
@@ -23,11 +24,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Reddit Tutorial',
       theme: Pallete.darkModeAppTheme,
-      home: const LoginScreen(),
+      routerDelegate:
+          RoutemasterDelegate(routesBuilder: (context) => loggedOutRoute),
+      routeInformationParser: const RoutemasterParser(),
     );
   }
 }
