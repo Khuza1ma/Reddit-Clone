@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:reddit_clone/features/auth/repository/auth_repository.dart';
@@ -13,6 +14,16 @@ final authControllerProvider =
           ref: ref,
         ));
 
+final authStateChangeProvider = StreamProvider((ref) {
+  final authController = ref.watch(authControllerProvider.notifier);
+  return authController.authStateChange;
+});
+
+final getUserDataProvider = StreamProvider.family((ref, String uid) {
+  final authController = ref.watch(authControllerProvider.notifier);
+  return authController.getUserData(uid);
+});
+
 class AuthController extends StateNotifier<bool> {
   final AuthRepository _authRepository;
   final Ref _ref;
@@ -24,6 +35,8 @@ class AuthController extends StateNotifier<bool> {
         _ref = ref,
         super(false);
 
+  Stream<User?> get authStateChange => _authRepository.authStateChange;
+
   void signUpWithGoogle(BuildContext context) async {
     state = true;
     final user = await _authRepository.signInWithGoogle();
@@ -33,5 +46,9 @@ class AuthController extends StateNotifier<bool> {
       (userModel) =>
           _ref.read(userProvider.notifier).update((state) => userModel),
     );
+  }
+
+  Stream<UserModel> getUserData(String uid) {
+    return _authRepository.getUserData(uid);
   }
 }
