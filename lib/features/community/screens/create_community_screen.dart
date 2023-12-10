@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:reddit_clone/features/community/controller/community_controller.dart';
 import 'package:reddit_clone/features/widgets/widget_ext.dart';
+import 'package:reddit_clone/themes/pallete.dart';
 
 import '../../widgets/loader.dart';
 
@@ -45,11 +46,16 @@ class _CommunityScreenState extends ConsumerState<CreateCommunityScreen> {
                   10.verticalSpace,
                   TextField(
                     controller: communityNameController,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       hintText: 'r/Community_name',
                       filled: true,
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.all(18),
+                      contentPadding: const EdgeInsets.all(18),
+                      enabledBorder: _buildOutlineInputBorder(),
+                      disabledBorder: _buildOutlineInputBorder(),
+                      errorBorder: _buildOutlineInputBorder(),
+                      focusedBorder: _buildOutlineInputBorder(),
+                      focusedErrorBorder: _buildOutlineInputBorder(),
                     ),
                     maxLength: 21,
                   ),
@@ -59,9 +65,12 @@ class _CommunityScreenState extends ConsumerState<CreateCommunityScreen> {
                       createCommunity();
                     },
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
+
                       ),
+
                       minimumSize: const Size(
                         double.infinity,
                         50,
@@ -69,7 +78,10 @@ class _CommunityScreenState extends ConsumerState<CreateCommunityScreen> {
                     ),
                     child: const Text(
                       'Create a Community',
-                      style: TextStyle(fontSize: 17),
+                      style: TextStyle(
+                        fontSize: 17,
+                        color: Pallete.whiteColor,
+                      ),
                     ),
                   )
                 ],
@@ -77,4 +89,6 @@ class _CommunityScreenState extends ConsumerState<CreateCommunityScreen> {
             ),
     );
   }
+
+  OutlineInputBorder _buildOutlineInputBorder() => OutlineInputBorder(borderRadius: BorderRadius.circular(30));
 }

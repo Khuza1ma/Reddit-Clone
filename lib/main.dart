@@ -48,6 +48,7 @@ class _MainAppState extends ConsumerState<MainApp> {
     return ref.watch(authStateChangeProvider).when(
           data: (data) => MaterialApp.router(
             debugShowCheckedModeBanner: false,
+
             title: 'Reddit Tutorial',
             theme: Pallete.darkModeAppTheme,
             routerDelegate: RoutemasterDelegate(routesBuilder: (context) {
