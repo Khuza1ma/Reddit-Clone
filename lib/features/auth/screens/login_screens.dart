@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:reddit_clone/core/constants/app_images.dart';
 import 'package:reddit_clone/features/auth/controller/auth_controller.dart';
-import 'package:reddit_clone/features/auth/widgets/loader.dart';
-import 'package:reddit_clone/features/auth/widgets/sign_in_button.dart';
-import 'package:reddit_clone/features/auth/widgets/widget_ext.dart';
+import 'package:reddit_clone/features/widgets/widget_ext.dart';
+
+import '../../widgets/loader.dart';
+import '../../widgets/sign_in_button.dart';
 
 class LoginScreen extends ConsumerWidget {
   const LoginScreen({super.key});

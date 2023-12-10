@@ -3,13 +3,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:reddit_clone/features/auth/controller/auth_controller.dart';
-import 'package:reddit_clone/features/auth/widgets/error_text.dart';
-import 'package:reddit_clone/features/auth/widgets/loader.dart';
 import 'package:reddit_clone/models/user_model.dart';
 import 'package:reddit_clone/router.dart';
 import 'package:reddit_clone/themes/pallete.dart';
 import 'package:routemaster/routemaster.dart';
 
+import 'features/widgets/error_text.dart';
+import 'features/widgets/loader.dart';
 import 'firebase_options.dart';
 
 void main() async {
