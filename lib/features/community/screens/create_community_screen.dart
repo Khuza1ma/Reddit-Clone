@@ -46,16 +46,11 @@ class _CommunityScreenState extends ConsumerState<CreateCommunityScreen> {
                   10.verticalSpace,
                   TextField(
                     controller: communityNameController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'r/Community_name',
                       filled: true,
                       border: InputBorder.none,
-                      contentPadding: const EdgeInsets.all(18),
-                      enabledBorder: _buildOutlineInputBorder(),
-                      disabledBorder: _buildOutlineInputBorder(),
-                      errorBorder: _buildOutlineInputBorder(),
-                      focusedBorder: _buildOutlineInputBorder(),
-                      focusedErrorBorder: _buildOutlineInputBorder(),
+                      contentPadding: EdgeInsets.all(18),
                     ),
                     maxLength: 21,
                   ),
@@ -65,12 +60,9 @@ class _CommunityScreenState extends ConsumerState<CreateCommunityScreen> {
                       createCommunity();
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
-
                       ),
-
                       minimumSize: const Size(
                         double.infinity,
                         50,
@@ -78,10 +70,7 @@ class _CommunityScreenState extends ConsumerState<CreateCommunityScreen> {
                     ),
                     child: const Text(
                       'Create a Community',
-                      style: TextStyle(
-                        fontSize: 17,
-                        color: Pallete.whiteColor,
-                      ),
+                      style: TextStyle(fontSize: 17),
                     ),
                   )
                 ],

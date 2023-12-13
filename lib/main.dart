@@ -50,7 +50,8 @@ class _MainAppState extends ConsumerState<MainApp> {
             debugShowCheckedModeBanner: false,
 
             title: 'Reddit Tutorial',
-            theme: Pallete.darkModeAppTheme,
+            theme: ThemeData.dark(useMaterial3: false),
+            darkTheme: Pallete.darkModeAppTheme,
             routerDelegate: RoutemasterDelegate(routesBuilder: (context) {
               if (data != null) {
                 getData(ref, data);
