@@ -78,6 +78,4 @@ class _CommunityScreenState extends ConsumerState<CreateCommunityScreen> {
             ),
     );
   }
-
-  OutlineInputBorder _buildOutlineInputBorder() => OutlineInputBorder(borderRadius: BorderRadius.circular(30));
 }
