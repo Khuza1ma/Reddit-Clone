@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:reddit_clone/features/community/controller/community_controller.dart';
 import 'package:reddit_clone/features/widgets/widget_ext.dart';
-import 'package:reddit_clone/themes/pallete.dart';
-
 import '../../widgets/loader.dart';
 
 class CreateCommunityScreen extends ConsumerStatefulWidget {

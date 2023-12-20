@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:reddit_clone/core/constants/app_images.dart';
 import 'package:reddit_clone/features/auth/controller/auth_controller.dart';
 import 'package:reddit_clone/features/widgets/widget_ext.dart';
-
 import '../../widgets/loader.dart';
 import '../../widgets/sign_in_button.dart';
 

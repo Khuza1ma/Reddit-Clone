@@ -5,7 +5,6 @@ import 'package:reddit_clone/features/auth/controller/auth_controller.dart';
 import 'package:reddit_clone/features/community/repository/community_repository.dart';
 import 'package:reddit_clone/models/community_model.dart';
 import 'package:routemaster/routemaster.dart';
-
 import '../../../core/utils.dart';
 
 final userCommunitiesProvider = StreamProvider((ref) {
